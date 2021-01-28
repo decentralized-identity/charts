@@ -1,0 +1,444 @@
+# Default values for spherity-web.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+uniResolverWeb:
+  replicaCount: 1
+
+
+
+  nameOverride: "uni-resolver-web"
+  fullnameOverride: "uni-resolver-web"
+
+  podSecurityContext: {}
+  # fsGroup: 2000
+
+  securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+  service:
+    type: ClusterIP
+    port: 8080
+
+  resources:
+    # We usually recommend not to specify default resources and to leave this as a conscious
+    # choice for the user. This also increases chances charts run on environments with little
+    # resources, such as Minikube. If you do want to specify resources, uncomment the following
+    # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+    requests:
+      cpu: 100m
+      memory: 128Mi
+
+  nodeSelector: {}
+
+  tolerations: []
+
+  affinity: {}
+
+  ingress:
+    host: uni-resolver.int.eu.spherity.io
+
+ontidDriver:
+  replicaCount: 1
+
+  image:
+    repository: ontio/ontid-driver
+    tag: latest
+    pullPolicy: Always
+
+  nameOverride: "ontid-driver"
+  fullnameOverride: "ontid-driver"
+
+  podSecurityContext: {}
+  # fsGroup: 2000
+
+  securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+  service:
+    type: ClusterIP
+    port: 8080
+
+  resources:
+    # We usually recommend not to specify default resources and to leave this as a conscious
+    # choice for the user. This also increases chances charts run on environments with little
+    # resources, such as Minikube. If you do want to specify resources, uncomment the following
+    # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+    requests:
+      cpu: 100m
+      memory: 128Mi
+
+  nodeSelector: {}
+
+  tolerations: []
+
+  affinity: {}
+
+evanDidDriver:
+  replicaCount: 1
+
+  image:
+    repository: evannetwork/evan-did-driver
+    tag: latest
+    pullPolicy: Always
+
+  nameOverride: "evan-did-driver"
+  fullnameOverride: "evan-did-driver"
+
+  podSecurityContext: {}
+  # fsGroup: 2000
+
+  securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+  service:
+    type: ClusterIP
+    port: 8080
+
+  resources:
+    # We usually recommend not to specify default resources and to leave this as a conscious
+    # choice for the user. This also increases chances charts run on environments with little
+    # resources, such as Minikube. If you do want to specify resources, uncomment the following
+    # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+    requests:
+      cpu: 100m
+      memory: 128Mi
+
+  nodeSelector: {}
+
+  tolerations: []
+
+  affinity: {}
+
+
+jolocomDidDriver:
+  replicaCount: 1
+
+  image:
+    repository: jolocomgmbh/jolocom-did-driver
+    tag: latest
+    pullPolicy: Always
+
+  nameOverride: "jolocom-did-driver"
+  fullnameOverride: "jolocom-did-driver"
+
+  podSecurityContext: {}
+  # fsGroup: 2000
+
+  securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+  service:
+    type: ClusterIP
+    port: 8080
+
+  resources:
+    # We usually recommend not to specify default resources and to leave this as a conscious
+    # choice for the user. This also increases chances charts run on environments with little
+    # resources, such as Minikube. If you do want to specify resources, uncomment the following
+    # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+    requests:
+      cpu: 100m
+      memory: 128Mi
+
+  nodeSelector: {}
+
+  tolerations: []
+
+  affinity: {}
+
+driverDns:
+  replicaCount: 1
+
+
+
+  nameOverride: "driver-dns"
+  fullnameOverride: "driver-dns"
+
+  podSecurityContext: {}
+  # fsGroup: 2000
+
+  securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+  service:
+    type: ClusterIP
+    port: 8080
+
+  resources:
+    # We usually recommend not to specify default resources and to leave this as a conscious
+    # choice for the user. This also increases chances charts run on environments with little
+    # resources, such as Minikube. If you do want to specify resources, uncomment the following
+    # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+    requests:
+      cpu: 100m
+      memory: 128Mi
+
+  nodeSelector: {}
+
+  tolerations: []
+
+  affinity: {}
+
+  env:
+    uniresolverDriverDnsDnsServers: ""
+
+uniResolverDriverDidUport:
+  replicaCount: 1
+
+  nameOverride: "uni-resolver-driver-did-uport"
+  fullnameOverride: "uni-resolver-driver-did-uport"
+
+  podSecurityContext: {}
+  # fsGroup: 2000
+
+  securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+  service:
+    type: ClusterIP
+    port: 8081
+
+  resources:
+    # We usually recommend not to specify default resources and to leave this as a conscious
+    # choice for the user. This also increases chances charts run on environments with little
+    # resources, such as Minikube. If you do want to specify resources, uncomment the following
+    # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+    requests:
+      cpu: 100m
+      memory: 128Mi
+
+  nodeSelector: {}
+
+  tolerations: []
+
+  affinity: {}
+
+driverDidSov:
+  replicaCount: 1
+
+
+
+  nameOverride: "driver-did-sov"
+  fullnameOverride: "driver-did-sov"
+
+  podSecurityContext: {}
+  # fsGroup: 2000
+
+  securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+  service:
+    type: ClusterIP
+    port: 8080
+
+  resources:
+    # We usually recommend not to specify default resources and to leave this as a conscious
+    # choice for the user. This also increases chances charts run on environments with little
+    # resources, such as Minikube. If you do want to specify resources, uncomment the following
+    # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+    requests:
+      cpu: 100m
+      memory: 128Mi
+
+  nodeSelector: {}
+
+  tolerations: []
+
+  affinity: {}
+
+  env:
+    uniresolverDriverDidSovLibIndyPath: ""
+    uniresolverDriverDidSovPoolConfigs: _;./sovrin/mainnet.txn;staging;./sovrin/stagingnet.txn;builder;./sovrin/buildernet.txn;danube;./sovrin/danube.txn
+    uniresolverDriverDidSovPoolVersions: _;2;staging;2;builder;2;danube;2
+    uniresolverDriverDidSovWalletName: default
+
+driverDidKey:
+  replicaCount: 1
+
+
+
+  nameOverride: "driver-did-key"
+  fullnameOverride: "driver-did-key"
+
+  podSecurityContext: {}
+  # fsGroup: 2000
+
+  securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+  service:
+    type: ClusterIP
+    port: 8080
+
+  resources:
+    # We usually recommend not to specify default resources and to leave this as a conscious
+    # choice for the user. This also increases chances charts run on environments with little
+    # resources, such as Minikube. If you do want to specify resources, uncomment the following
+    # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+    requests:
+      cpu: 100m
+      memory: 128Mi
+
+  nodeSelector: {}
+
+  tolerations: []
+
+  affinity: {}
+
+ace-did-driver:
+
+
+bba-did-driver:
+
+
+dock-did-driver:
+
+  imagePullSecrets: 
+    - name: "harborpull"
+driver-did-abt:
+
+
+driver-did-bid:
+
+
+driver-did-btcr:
+
+
+driver-did-ccp:
+
+
+driver-did-cy:
+
+
+driver-did-erc725:
+
+
+driver-did-factom:
+
+
+driver-did-icon:
+
+
+driver-did-ion:
+
+
+driver-did-key:
+
+
+driver-did-mpg:
+
+
+driver-did-sov:
+
+
+driver-did-stack:
+
+
+driver-did-trust:
+
+
+driver-did-trustbloc:
+
+
+driver-did-vaa:
+  enabled: false
+
+
+driver-dns:
+
+
+evan-did-driver:
+
+
+gataca-did-resolver-driver:
+
+
+hacera-did-driver:
+
+
+jolocom-did-driver:
+
+
+kilt-did-driver:
+
+
+ontid-driver:
+
+
+schema-registry-did-resolver:
+
+
+seraph-id-did-driver:
+
+
+tsjs-did-sirius-id-driver:
+
+
+uni-resolver-did-v1-driver:
+
+
+uni-resolver-driver-did-echo:
+
+
+uni-resolver-driver-did-io:
+
+
+uni-resolver-driver-did-uport:
+
+
+uni-resolver-web:
+
+
+  ingress:
+    enabled: true
+    hosts:
+      - host: uni-resolver.int.eu.spherity.io
+        paths: 
+          - path: "/"
+    tls:
+      - hosts:
+        -  uni-resolver.int.eu.spherity.io
+work-did-driver:
+
+

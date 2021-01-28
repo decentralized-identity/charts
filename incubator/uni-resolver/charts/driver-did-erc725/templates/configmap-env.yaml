@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ template "driver-did-erc725.fullname" . }}-env
+  labels:
+    app: {{ template "driver-did-erc725.name" . }}
+    chart: {{ template "driver-did-erc725.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+{{- if .Values.extraLabels }}
+{{ toYaml .Values.extraLabels | indent 4 }}
+{{- end }}
+data:
+{{ toYaml .Values.env | indent 2 }}

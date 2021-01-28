@@ -1,0 +1,8 @@
+apiVersion: v1
+data:
+  config.json: {{ .Files.Get (print "files/" "config.json") | quote | indent 4 }}
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-config
+  labels:
+    {{- include "uni-resolver-web.labels" . | nindent 4 }}

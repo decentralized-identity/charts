@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "uni-resolver-driver-did-io.fullname" . }}
+  labels:
+    {{- include "uni-resolver-driver-did-io.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "uni-resolver-driver-did-io.selectorLabels" . | nindent 4 }}

@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ template "ace-did-driver.fullname" . }}-env
+  labels:
+    app: {{ template "ace-did-driver.name" . }}
+    chart: {{ template "ace-did-driver.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+{{- if .Values.extraLabels }}
+{{ toYaml .Values.extraLabels | indent 4 }}
+{{- end }}
+data:
+{{ toYaml .Values.env | indent 2 }}
