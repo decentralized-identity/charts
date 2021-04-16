@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "schema-registry-did-resolver.fullname" . }}
+  labels:
+    {{- include "schema-registry-did-resolver.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "schema-registry-did-resolver.selectorLabels" . | nindent 4 }}

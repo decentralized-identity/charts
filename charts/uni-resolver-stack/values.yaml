@@ -1,0 +1,487 @@
+# Default values for spherity-web.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+uniResolverWeb:
+  replicaCount: 1
+
+  image:
+    repository: uni-resolver/uni-resolver-web
+    tag: latest
+    pullPolicy: Always
+
+  nameOverride: "uni-resolver-web"
+  fullnameOverride: "uni-resolver-web"
+
+  podSecurityContext: {}
+  # fsGroup: 2000
+
+  securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+  service:
+    type: ClusterIP
+    port: 8080
+
+  resources:
+    # We usually recommend not to specify default resources and to leave this as a conscious
+    # choice for the user. This also increases chances charts run on environments with little
+    # resources, such as Minikube. If you do want to specify resources, uncomment the following
+    # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+    requests:
+      cpu: 100m
+      memory: 128Mi
+
+  nodeSelector: {}
+
+  tolerations: []
+
+  affinity: {}
+
+  ingress:
+    host: uni-resolver.int.eu.spherity.io
+
+ontidDriver:
+  replicaCount: 1
+
+  image:
+    repository: ontio/ontid-driver
+    tag: latest
+    pullPolicy: Always
+
+  nameOverride: "ontid-driver"
+  fullnameOverride: "ontid-driver"
+
+  podSecurityContext: {}
+  # fsGroup: 2000
+
+  securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+  service:
+    type: ClusterIP
+    port: 8080
+
+  resources:
+    # We usually recommend not to specify default resources and to leave this as a conscious
+    # choice for the user. This also increases chances charts run on environments with little
+    # resources, such as Minikube. If you do want to specify resources, uncomment the following
+    # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+    requests:
+      cpu: 100m
+      memory: 128Mi
+
+  nodeSelector: {}
+
+  tolerations: []
+
+  affinity: {}
+
+evanDidDriver:
+  replicaCount: 1
+
+  image:
+    repository: evannetwork/evan-did-driver
+    tag: latest
+    pullPolicy: Always
+
+  nameOverride: "evan-did-driver"
+  fullnameOverride: "evan-did-driver"
+
+  podSecurityContext: {}
+  # fsGroup: 2000
+
+  securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+  service:
+    type: ClusterIP
+    port: 8080
+
+  resources:
+    # We usually recommend not to specify default resources and to leave this as a conscious
+    # choice for the user. This also increases chances charts run on environments with little
+    # resources, such as Minikube. If you do want to specify resources, uncomment the following
+    # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+    requests:
+      cpu: 100m
+      memory: 128Mi
+
+  nodeSelector: {}
+
+  tolerations: []
+
+  affinity: {}
+
+
+jolocomDidDriver:
+  replicaCount: 1
+
+  image:
+    repository: jolocomgmbh/jolocom-did-driver
+    tag: latest
+    pullPolicy: Always
+
+  nameOverride: "jolocom-did-driver"
+  fullnameOverride: "jolocom-did-driver"
+
+  podSecurityContext: {}
+  # fsGroup: 2000
+
+  securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+  service:
+    type: ClusterIP
+    port: 8080
+
+  resources:
+    # We usually recommend not to specify default resources and to leave this as a conscious
+    # choice for the user. This also increases chances charts run on environments with little
+    # resources, such as Minikube. If you do want to specify resources, uncomment the following
+    # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+    requests:
+      cpu: 100m
+      memory: 128Mi
+
+  nodeSelector: {}
+
+  tolerations: []
+
+  affinity: {}
+
+driverDns:
+  replicaCount: 1
+
+  image:
+    repository: uni-resolver/driver-dns
+    tag: latest
+    pullPolicy: Always
+
+  nameOverride: "driver-dns"
+  fullnameOverride: "driver-dns"
+
+  podSecurityContext: {}
+  # fsGroup: 2000
+
+  securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+  service:
+    type: ClusterIP
+    port: 8080
+
+  resources:
+    # We usually recommend not to specify default resources and to leave this as a conscious
+    # choice for the user. This also increases chances charts run on environments with little
+    # resources, such as Minikube. If you do want to specify resources, uncomment the following
+    # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+    requests:
+      cpu: 100m
+      memory: 128Mi
+
+  nodeSelector: {}
+
+  tolerations: []
+
+  affinity: {}
+
+  env:
+    uniresolverDriverDnsDnsServers: ""
+
+uniResolverDriverDidUport:
+  replicaCount: 1
+
+  image:
+    repository: uni-resolver/uni-resolver
+    tag: latest
+    pullPolicy: Always
+
+
+
+  nameOverride: "uni-resolver-driver-did-uport"
+  fullnameOverride: "uni-resolver-driver-did-uport"
+
+  podSecurityContext: {}
+  # fsGroup: 2000
+
+  securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+  service:
+    type: ClusterIP
+    port: 8081
+
+  resources:
+    # We usually recommend not to specify default resources and to leave this as a conscious
+    # choice for the user. This also increases chances charts run on environments with little
+    # resources, such as Minikube. If you do want to specify resources, uncomment the following
+    # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+    requests:
+      cpu: 100m
+      memory: 128Mi
+
+  nodeSelector: {}
+
+  tolerations: []
+
+  affinity: {}
+
+driverDidSov:
+  replicaCount: 1
+
+  image:
+    repository: uni-resolver/driver-did-sov
+    tag: latest
+    pullPolicy: Always
+
+  nameOverride: "driver-did-sov"
+  fullnameOverride: "driver-did-sov"
+
+  podSecurityContext: {}
+  # fsGroup: 2000
+
+  securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+  service:
+    type: ClusterIP
+    port: 8080
+
+  resources:
+    # We usually recommend not to specify default resources and to leave this as a conscious
+    # choice for the user. This also increases chances charts run on environments with little
+    # resources, such as Minikube. If you do want to specify resources, uncomment the following
+    # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+    requests:
+      cpu: 100m
+      memory: 128Mi
+
+  nodeSelector: {}
+
+  tolerations: []
+
+  affinity: {}
+
+  env:
+    uniresolverDriverDidSovLibIndyPath: ""
+    uniresolverDriverDidSovPoolConfigs: _;./sovrin/mainnet.txn;staging;./sovrin/stagingnet.txn;builder;./sovrin/buildernet.txn;danube;./sovrin/danube.txn
+    uniresolverDriverDidSovPoolVersions: _;2;staging;2;builder;2;danube;2
+    uniresolverDriverDidSovWalletName: default
+
+driverDidKey:
+  replicaCount: 1
+
+  image:
+    repository: uni-resolver/driver-did-key
+    tag: latest
+    pullPolicy: Always
+
+  nameOverride: "driver-did-key"
+  fullnameOverride: "driver-did-key"
+
+  podSecurityContext: {}
+  # fsGroup: 2000
+
+  securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+  service:
+    type: ClusterIP
+    port: 8080
+
+  resources:
+    # We usually recommend not to specify default resources and to leave this as a conscious
+    # choice for the user. This also increases chances charts run on environments with little
+    # resources, such as Minikube. If you do want to specify resources, uncomment the following
+    # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+    requests:
+      cpu: 100m
+      memory: 128Mi
+
+  nodeSelector: {}
+
+  tolerations: []
+
+  affinity: {}
+
+ace-did-driver:
+  image:
+    repository: uni-resolver/ace-did-driver
+
+bba-did-driver:
+  image:
+    repository: uni-resolver/bba-did-driver
+
+dock-did-driver:
+  image:
+    repository: uni-resolver/dock-did-driver
+  imagePullSecrets: 
+    - name: "harborpull"
+driver-did-abt:
+  image:
+    repository: uni-resolver/driver-did-abt
+
+driver-did-bid:
+  image:
+    repository: uni-resolver/driver-did-bid
+
+driver-did-btcr:
+  image:
+    repository: uni-resolver/driver-did-btcr
+
+driver-did-ccp:
+  image:
+    repository: uni-resolver/driver-did-cpp
+
+driver-did-cy:
+  image:
+    repository: uni-resolver/driver-did-cy
+
+driver-did-erc725:
+  image:
+    repository: uni-resolver/driver-did-erc725
+
+driver-did-factom:
+  image:
+    repository: uni-resolver/driver-did-factom
+
+driver-did-icon:
+  image:
+    repository: uni-resolver/driver-did-icon
+
+driver-did-ion:
+  image:
+    repository: uni-resolver/driver-did-ion
+
+driver-did-key:
+  image:
+    repository: uni-resolver/driver-did-key
+
+driver-did-mpg:
+  image:
+    repository: uni-resolver/driver-did-mpg
+
+driver-did-sov:
+  image:
+    repository: uni-resolver/driver-did-sov
+
+driver-did-stack:
+  image:
+    repository: uni-resolver/driver-did-stack
+
+driver-did-trust:
+  image:
+    repository: uni-resolver/driver-did-trust
+
+driver-did-trustbloc:
+  image:
+    repository: uni-resolver/driver-did-trustbloc
+
+driver-did-vaa:
+  enabled: false
+  image:
+    repository: uni-resolver/driver-did-vaa
+
+driver-dns:
+  image:
+    repository: uni-resolver/driver-dns
+
+evan-did-driver:
+  image:
+    repository: uni-resolver/evan-did-driver
+
+gataca-did-resolver-driver:
+  image:
+    repository: uni-resolver/universal-resolver-driver
+
+hacera-did-driver:
+  image:
+    repository: uni-resolver/hacera-did-driver
+
+jolocom-did-driver:
+  image:
+    repository: uni-resolver/jolocom-did-driver
+
+kilt-did-driver:
+  image:
+    repository: uni-resolver/kilt-did-driver
+
+ontid-driver:
+  image:
+    repository: uni-resolver/ontid-driver
+
+schema-registry-did-resolver:
+  image:
+    repository: uni-resolver/schema-registry-did-resolver
+
+seraph-id-did-driver:
+  image:
+    repository: uni-resolver/seraph-id-did-driver
+
+tsjs-did-sirius-id-driver:
+  image:
+    repository: uni-resolver/tsjs-did-sirius-id-driver
+
+uni-resolver-did-v1-driver:
+  image:
+    repository: uni-resolver/uni-resolver-did-v1-driver
+
+uni-resolver-driver-did-echo:
+  image:
+    repository: uni-resolver/uni-resolver-driver-did-echo
+
+uni-resolver-driver-did-io:
+  image:
+    repository: uni-resolver/uni-resolver-driver-did-io
+
+uni-resolver-driver-did-uport:
+  image:
+    repository: uni-resolver/uni-resolver-driver-did-uport
+uni-resolver-web:
+  image:
+    repository: uni-resolver/uni-resolver-web
+work-did-driver:
+  image:
+    repository: uni-resolver/work-did-driver
+

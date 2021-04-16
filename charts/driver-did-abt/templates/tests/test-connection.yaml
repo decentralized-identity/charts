@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "driver-did-abt.fullname" . }}-test-connection"
+  labels:
+    {{- include "driver-did-abt.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['{{ include "driver-did-abt.fullname" . }}:{{ .Values.service.port }}']
+  restartPolicy: Never
