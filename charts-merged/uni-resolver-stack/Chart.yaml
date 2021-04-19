@@ -1,5 +1,5 @@
 apiVersion: v2
-name: uni-resolver
+name: uni-resolver-stack
 description: A Helm chart for Kubernetes
 
 # A chart can be either an 'application' or a 'library' chart.
@@ -20,110 +20,110 @@ version: 0.4.0
 # incremented each time you make changes to the application.
 appVersion: v0.3.1+master
 
-# dependencies:
-  # - name: ace-did-driver
-  #   version: '0.1.0'
-  #   respository: "file://charts/nginx"
-  # - name: seraph-id-did-driver
-  #   version: '0.1.0'
-  #   respository: "file://charts/seraph-id-did-driver"
-  # - name: driver-did-mpg
-  #   version: '0.1.0'
-  #   respository: "file://charts/driver-did-mpg"
-  # - name: hacera-did-driver
-  #   version: '0.1.0'
-  #   respository: "file://charts/hacera-did-driver"
-  # - name: jolocom-did-driver
-  #   version: '0.1.0'
-  #   respository: "file://charts/jolocom-did-driver"
-  # - name: uni-resolver-did-v1-driver
-  #   version: '0.1.0'
-  #   respository: "file://charts/uni-resolver-did-v1-driver"
-  # - name: driver-dns
-  #   version: '0.1.0'
-  #   respository: "file://charts/driver-dns"
-  # - name: gataca-did-resolver-driver
-  #   version: '0.1.0'
-  #   respository: "file://charts/gataca-did-resolver-driver"
-  # - name: driver-did-trust
-  #   version: '0.1.0'
-  #   respository: "file://charts/driver-did-trust"
-  # - name: driver-did-trustbloc
-  #   version: '0.1.0'
-  #   respository: "file://charts/driver-did-trustbloc"
-  # - name: tsjs-did-sirius-id-driver
-  #   version: '0.1.0'
-  #   respository: "file://charts/tsjs-did-sirius-id-driver"
-  # - name: driver-did-stack
-  #   version: '0.1.0'
-  #   respository: "file://charts/driver-did-stack"
-  # - name: driver-did-factom
-  #   version: '0.1.0'
-  #   respository: "file://charts/driver-did-factom"
-  # - name: driver-did-sov
-  #   version: '0.1.0'
-  #   respository: "file://charts/driver-did-sov"
-  # - name: uni-resolver-web
-  #   version: '0.1.0'
-  #   respository: "file://charts/uni-resolver-web"
-  # - name: uni-resolver-driver-did-echo
-  #   version: '0.1.0'
-  #   respository: "file://charts/uni-resolver-driver-did-echo"
-  # - name: driver-did-ccp
-  #   version: '0.1.0'
-  #   respository: "file://charts/driver-did-ccp"
-  # - name: driver-did-ion
-  #   version: '0.1.0'
-  #   respository: "file://charts/driver-did-ion"
-  # - name: driver-did-vaa
-  #   condition: driver-did-vaa.enabled
-  #   version: '0.1.0'
-  #   respository: "file://charts/driver-did-vaa"
-  # - name: driver-did-key
-  #   version: '0.1.1'
-  #   respository: "file://charts/driver-did-key"
-  # - name: kilt-did-driver
-  #   version: '0.1.0'
-  #   respository: "file://charts/kilt-did-driver"
-  # - name: ontid-driver
-  #   version: '0.1.0'
-  #   respository: "file://charts/ontid-driver"
-  # - name: driver-did-abt
-  #   version: '0.1.0'
-  #   respository: "file://charts/driver-did-abt"
-  # - name: uni-resolver-driver-did-io
-  #   version: '0.1.0'
-  #   respository: "file://charts/uni-resolver-driver-did-io"
-  # - name: driver-did-bid
-  #   version: '0.1.0'
-  #   respository: "file://charts/driver-did-bid"
-  # - name: driver-did-cy
-  #   version: '0.1.0'
-  #   respository: "file://charts/driver-did-cy"
-  # - name: dock-did-driver
-  #   version: '0.1.0'
-  #   respository: "file://charts/dock-did-driver"
-  # - name: schema-registry-did-resolver
-  #   version: '0.1.0'
-  #   respository: "file://charts/schema-registry-did-resolver"
-  # - name: bba-did-driver
-  #   version: '0.1.0'
-  #   respository: "file://charts/bba-did-driver"
-  # - name: driver-did-icon
-  #   version: '0.1.0'
-  #   respository: "file://charts/driver-did-icon"
-  # - name: work-did-driver
-  #   version: '0.1.0'
-  #   respository: "file://charts/work-did-driver"
-  # - name: evan-did-driver
-  #   version: '0.1.0'
-  #   respository: "file://charts/evan-did-driver"
-  # - name: driver-did-erc725
-  #   version: '0.1.0'
-  #   respository: "file://charts/driver-did-erc725"
-  # - name: uni-resolver-driver-did-uport
-  #   version: '0.1.0'
-  #   respository: "file://charts/uni-resolver-driver-did-uport"
-  # - name: driver-did-btcr
-  #   version: '0.1.0'
-  #   respository: "file://charts/driver-did-btcr"
+dependencies:
+- name: ace-did-driver
+  version: '0.1.0'
+  repository: "https://raw.githubusercontent.com/decentralized-identity/charts/gh-pages"
+- name: seraph-id-did-driver
+  version: '0.1.0'
+  repository: "https://raw.githubusercontent.com/decentralized-identity/charts/gh-pages"
+- name: driver-did-mpg
+  version: '0.1.0'
+  repository: "https://raw.githubusercontent.com/decentralized-identity/charts/gh-pages"
+- name: hacera-did-driver
+  version: '0.1.0'
+  repository: "https://raw.githubusercontent.com/decentralized-identity/charts/gh-pages"
+- name: jolocom-did-driver
+  version: '0.1.0'
+  repository: "https://raw.githubusercontent.com/decentralized-identity/charts/gh-pages"
+- name: uni-resolver-did-v1-driver
+  version: '0.1.0'
+  repository: "https://raw.githubusercontent.com/decentralized-identity/charts/gh-pages"
+- name: driver-dns
+  version: '0.1.0'
+  repository: "https://raw.githubusercontent.com/decentralized-identity/charts/gh-pages"
+- name: gataca-did-resolver-driver
+  version: '0.1.0'
+  repository: "https://raw.githubusercontent.com/decentralized-identity/charts/gh-pages"
+- name: driver-did-trust
+  version: '0.1.0'
+  repository: "https://raw.githubusercontent.com/decentralized-identity/charts/gh-pages"
+- name: driver-did-trustbloc
+  version: '0.1.0'
+  repository: "https://raw.githubusercontent.com/decentralized-identity/charts/gh-pages"
+- name: tsjs-did-sirius-id-driver
+  version: '0.1.0'
+  repository: "https://raw.githubusercontent.com/decentralized-identity/charts/gh-pages"
+- name: driver-did-stack
+  version: '0.1.0'
+  repository: "https://raw.githubusercontent.com/decentralized-identity/charts/gh-pages"
+- name: driver-did-factom
+  version: '0.1.0'
+  repository: "https://raw.githubusercontent.com/decentralized-identity/charts/gh-pages"
+- name: driver-did-sov
+  version: '0.1.0'
+  repository: "https://raw.githubusercontent.com/decentralized-identity/charts/gh-pages"
+- name: uni-resolver-web
+  version: '0.1.0'
+  repository: "https://raw.githubusercontent.com/decentralized-identity/charts/gh-pages"
+- name: uni-resolver-driver-did-echo
+  version: '0.1.0'
+  repository: "https://raw.githubusercontent.com/decentralized-identity/charts/gh-pages"
+- name: driver-did-ccp
+  version: '0.1.0'
+  repository: "https://raw.githubusercontent.com/decentralized-identity/charts/gh-pages"
+- name: driver-did-ion
+  version: '0.1.0'
+  repository: "https://raw.githubusercontent.com/decentralized-identity/charts/gh-pages"
+- name: driver-did-vaa
+  condition: driver-did-vaa.enabled
+  version: '0.1.0'
+  repository: "https://raw.githubusercontent.com/decentralized-identity/charts/gh-pages"
+- name: driver-did-key
+  version: '0.1.1'
+  repository: "https://raw.githubusercontent.com/decentralized-identity/charts/gh-pages"
+- name: kilt-did-driver
+  version: '0.1.0'
+  repository: "https://raw.githubusercontent.com/decentralized-identity/charts/gh-pages"
+- name: ontid-driver
+  version: '0.1.0'
+  repository: "https://raw.githubusercontent.com/decentralized-identity/charts/gh-pages"
+- name: driver-did-abt
+  version: '0.1.0'
+  repository: "https://raw.githubusercontent.com/decentralized-identity/charts/gh-pages"
+- name: uni-resolver-driver-did-io
+  version: '0.1.0'
+  repository: "https://raw.githubusercontent.com/decentralized-identity/charts/gh-pages"
+- name: driver-did-bid
+  version: '0.1.0'
+  repository: "https://raw.githubusercontent.com/decentralized-identity/charts/gh-pages"
+- name: driver-did-cy
+  version: '0.1.0'
+  repository: "https://raw.githubusercontent.com/decentralized-identity/charts/gh-pages"
+- name: dock-did-driver
+  version: '0.1.0'
+  repository: "https://raw.githubusercontent.com/decentralized-identity/charts/gh-pages"
+- name: schema-registry-did-resolver
+  version: '0.1.0'
+  repository: "https://raw.githubusercontent.com/decentralized-identity/charts/gh-pages"
+- name: bba-did-driver
+  version: '0.1.0'
+  repository: "https://raw.githubusercontent.com/decentralized-identity/charts/gh-pages"
+- name: driver-did-icon
+  version: '0.1.0'
+  repository: "https://raw.githubusercontent.com/decentralized-identity/charts/gh-pages"
+- name: work-did-driver
+  version: '0.1.0'
+  repository: "https://raw.githubusercontent.com/decentralized-identity/charts/gh-pages"
+- name: evan-did-driver
+  version: '0.1.0'
+  repository: "https://raw.githubusercontent.com/decentralized-identity/charts/gh-pages"
+- name: driver-did-erc725
+  version: '0.1.0'
+  repository: "https://raw.githubusercontent.com/decentralized-identity/charts/gh-pages"
+- name: uni-resolver-driver-did-uport
+  version: '0.1.0'
+  repository: "https://raw.githubusercontent.com/decentralized-identity/charts/gh-pages"
+- name: driver-did-btcr
+  version: '0.1.0'
+  repository: "https://raw.githubusercontent.com/decentralized-identity/charts/gh-pages"
